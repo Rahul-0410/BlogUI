@@ -37,9 +37,14 @@ div.post{
     margin-bottom: 30px;
 }
 
+
 div.post div.texts h2{
     margin: 0;
     font-size: 1.8rem;
+}
+
+.image{
+    margin-top: 20px;
 }
 
 div.post p.info{
