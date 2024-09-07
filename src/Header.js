@@ -1,15 +1,16 @@
-import { set } from 'mongoose';
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { UserContext } from './UserContext';
 
 function Header() {
-  const [username, setUsername] = React.useState(null)
+  
+  const {setUserInfo, userinfo} = React.useContext(UserContext);
   React.useEffect(() => {
     fetch('http://localhost:4000/profile', {
       credentials: 'include'
     }).then(res => {
       res.json().then(userinfo=> {
-          setUsername(userinfo.username);
+          setUserInfo(userinfo);
       })
     })
       
@@ -20,8 +21,10 @@ function Header() {
       credentials: 'include',
       method: 'POST'
     })
-    setUsername(null);
+    setUserInfo(null);
     }
+
+    const username= userinfo?.username;
 
   return (
     <header>

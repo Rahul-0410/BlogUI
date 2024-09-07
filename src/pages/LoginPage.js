@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {Navigate} from 'react-router-dom';
+import { UserContext } from '../UserContext';
 function LoginPage() {
   const [username, setUsername] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [redirect, setRedirect] = React.useState(false);
+
+  const {setUserInfo} = useContext(UserContext);
 
  async function login(e){
     e.preventDefault();
@@ -20,7 +23,10 @@ function LoginPage() {
     })
     if(response.ok){
         // alert('login success');
+      response.json().then(userinfo=>{
+        setUserInfo(userinfo);
         setRedirect(true);
+      })
     } else {
         alert('login failed');
     }
