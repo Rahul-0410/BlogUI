@@ -33,7 +33,7 @@ function Header() {
           {username && 
           <>
           <Link to="/create">Create new Post</Link>
-          <a onClick={logout}>Logout</a>
+          <a onClick={logout} className='log'>Logout</a>
           </>
           
           }
