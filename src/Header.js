@@ -32,6 +32,7 @@ function Header() {
         <nav>
           {username && 
           <>
+          {/* <span className='user'>Hello, {username}</span> */}
           <Link to="/create">Create new Post</Link>
           <a onClick={logout} className='log'>Logout</a>
           </>

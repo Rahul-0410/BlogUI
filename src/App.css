@@ -14,6 +14,8 @@ main{
     margin: 0 auto;
 }
 
+
+
 header{
     display: flex;
     justify-content: space-between;
@@ -150,4 +152,24 @@ div.post-page div.author{
 
 div.post-page div.content p{
     line-height: 1.5rem;
+}
+
+div.edit-row{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+div.post-page  a.edit-btn{
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 15px;
+    background-color: #333;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+a svg{
+    height: 20px;
 }
