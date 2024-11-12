@@ -27,7 +27,7 @@ function PostPage() {
         <h1 className='title'>{postInfo.title}</h1> 
         <time>{format(new Date(postInfo.createdAt), 'MMM d, yyyy HH:mm')}</time>
         <div className='author'>by @{postInfo.author.username}</div>
-        {userinfo.id === postInfo.author._id &&(
+        {userinfo?.id === postInfo.author._id &&(
           <div className='edit-row'>
              <Link to={`/edit/${postInfo._id}`} className='edit-btn'>
              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
